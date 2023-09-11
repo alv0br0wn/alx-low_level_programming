@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
   *main - Entry point
-  *Description: 'print different combinations of 3 digits'
+  *Description: This function prints different combinations of 3 digits.
   *Return : Always o
   */
 int main(void)
