@@ -4,7 +4,7 @@
   *
   *Return: Always 0 (success)
   */
-  void print_alphabet(void);
+  void print_alphabet(void)
 {
 	int i;
 
@@ -12,5 +12,5 @@
 	{
 		_putchar(i);
 	}
-	_putchar('\n')
+	_putchar('\n');
 }
