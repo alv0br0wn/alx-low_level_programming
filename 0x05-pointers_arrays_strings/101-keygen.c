@@ -22,9 +22,9 @@ void generate_password(char *password) {
     for (int i = 0; i < PASSWORD_LENGTH; ++i) {
         char *char_set = NULL;
         switch (i % 3) {
-            case 0: const char = (lowercase_chars); break;
-            case 1: const char = (uppercase_chars); break;
-            case 2: const char = (digit_chars); break;
+            case 0: (const char) = (lowercase_chars); break;
+            case 1: (const char) = (uppercase_chars); break;
+            case 2: (const char) = (digit_chars); break;
         }
         password[i] = random_char(char_set);
     }
