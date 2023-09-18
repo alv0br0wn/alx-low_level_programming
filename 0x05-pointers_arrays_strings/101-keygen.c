@@ -6,8 +6,9 @@
 #define PASSWORD_LENGTH 8
 
 // Function to generate a random character within a specified range
-char random_char(char min, char max) {
-    return min + rand() % (max - min + 1);
+char random_char(const char *char_set) {
+    int set_length = strlen(char_set);
+    return char_set[rand() % set_length];
 }
 
 // Function to generate a random valid password
@@ -25,7 +26,7 @@ void generate_password(char *password) {
             case 1: char_set = uppercase_chars; break;
             case 2: char_set = digit_chars; break;
         }
-        password[i] = char_set[rand() % strlen(char_set)];
+        password[i] = random_char(char_set);
     }
     password[PASSWORD_LENGTH] = '\0'; // Null-terminate the password
 }
