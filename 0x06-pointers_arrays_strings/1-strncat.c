@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+#include "main.h"
 /**
  * _strncat - a function that concatenates two strings.
  *
@@ -30,6 +30,3 @@ char *_strncat(char *dest, char *src, int n)
 
 	return (dest);
 }
-=======
-#in#in
->>>>>>> 608a04af5a7b501711f759a34d44c94db0f31b5c
