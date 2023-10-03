@@ -5,7 +5,8 @@
   *		a 2 dimentional array of intergers.
   *
   * @width: width
-  * @height height
+  *
+  * @height: height
   *
   * Return: Null on failure
   */
