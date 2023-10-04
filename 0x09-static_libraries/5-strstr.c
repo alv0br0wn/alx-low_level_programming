@@ -13,25 +13,21 @@
 
 char *_strstr(char *haystack, char *needle)
 {
-	/**
-	 * we initialize a helping variables
-	 * to assist in returning one of
-	 * our parameters pointers haystack
-	*/
-	char *h, *n;
+for (; *haystack != '\0'; haystack++)
+{
+	char *l = haystack;
+		char *p = needle;
 
-	while (*haystack != '\0')
-	{
-		h = haystack;
-		n = needle;
-		while (*n != '\0' && *haystack == *n)
+
+		while (*l == *p && *p != '\0')
 		{
-			haystack++;
-			n++;
+			l++;
+			p++;
 		}
-		if (!*n)
-			return (h);
-		haystack++;
-	}
-	return ('\0');
+
+
+		if (*p == '\0')
+			return (haystack);
+
+}
 }

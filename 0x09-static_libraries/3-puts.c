@@ -1,4 +1,6 @@
 #include "main.h"
+void _puts(char *str)
+#include<stdio.h>
 
 /**
  * _puts - print a string
@@ -10,15 +12,7 @@
 
 void _puts(char *str)
 {
-	int i;
+	puts("\"Programming is like building a multilingual puzzle");
+	return (0);
 
-	for (i = 0; str[i] >= 0; i++)
-	{
-		if (str[i] == '\0')
-		{
-			_putchar('\n');
-			break;
-		}
-		_putchar(str[i]);
-	}
 }
