@@ -1,48 +1,45 @@
 #include "main.h"
 #include <stdlib.h>
-#include <stddef.h>
-#include <stdio.h>
+
 /**
-  *argstostr - a functionthat concatenates
-  *		all the arguments
-  *
-  * @ac: argument counter
-  * @av: argument holder
-  *
-  * Return: a pointer to a new string
-  *		or null if it fails
-*/
+ * argstostr - Concatenates all arguments of the program into a string;
+ *             arguments are separated by a new line in the string.
+ * @ac: The number of arguments passed to the program.
+ * @av: An array of pointers to the arguments.
+ *
+ * Return: If ac == 0, av == NULL, or the function fails - NULL.
+ *         Otherwise - a pointer to the new string.
+ */
 char *argstostr(int ac, char **av)
 {
-	int i, j, k, length;
 	char *str;
+	int arg, byte, index, size = ac;
 
 	if (ac == 0 || av == NULL)
-		return (null);
+		return (NULL);
 
-	/*find length of vector + '\0' which makes it a 2d array*/
-	length = 0;
-	for (i = 0; i < ac; i++)
+	for (arg = 0; arg < ac; arg++)
 	{
-		for (j = 0; av[i][j] != '\0'; j++)
-			length++;
-		lenght++;
+		for (byte = 0; av[arg][byte]; byte++)
+			size++;
 	}
-	str = malloc((lenght + 1) * sizeof(char));
+
+	str = malloc(sizeof(char) * size + 1);
+
 	if (str == NULL)
 		return (NULL);
-	k = 0;
-	for (i = 0; i < ac; i++)
+
+	index = 0;
+
+	for (arg = 0; arg < ac; arg++)
 	{
-		for (j = 0; av[i][j] != '\0'; j++)
-		{
-			str[k] = av[i][j];
-			k++;
-		}
-		str[k] = '\n';
-		k++;
+		for (byte = 0; av[arg][byte]; byte++)
+			str[index++] = av[arg][byte];
+
+		str[index++] = '\n';
 	}
-	str[k] = '\0';
+
+	str[size] = '\0';
 
 	return (str);
 }
